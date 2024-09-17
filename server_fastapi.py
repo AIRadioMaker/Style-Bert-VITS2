@@ -55,10 +55,10 @@ update_dict()
 ## ここでロードしなくても必要になった際に自動ロードされるが、時間がかかるため事前にロードしておいた方が体験が良い
 bert_models.load_model(Languages.JP)
 bert_models.load_tokenizer(Languages.JP)
-bert_models.load_model(Languages.EN)
-bert_models.load_tokenizer(Languages.EN)
-bert_models.load_model(Languages.ZH)
-bert_models.load_tokenizer(Languages.ZH)
+# bert_models.load_model(Languages.EN)
+# bert_models.load_tokenizer(Languages.EN)
+# bert_models.load_model(Languages.ZH)
+# bert_models.load_tokenizer(Languages.ZH)
 
 
 def raise_validation_error(msg: str, param: str):
@@ -104,6 +104,7 @@ if __name__ == "__main__":
     else:
         device = "cuda" if torch.cuda.is_available() else "cpu"
 
+    logger.info(f"Using device: {device}")
     model_dir = Path(args.dir)
     model_holder = TTSModelHolder(model_dir, device)
     if len(model_holder.model_names) == 0:

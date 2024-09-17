@@ -16,3 +16,6 @@
 !/initialize.py
 !/requirements.txt
 !/server_editor.py
+!/server_fastapi.py
+!/runpod_handler.py
+!/start.sh
